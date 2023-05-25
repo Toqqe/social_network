@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}Log In{% endblock  %}
+
+{% block page_css_files %}
+<link rel="stylesheet" href="{% static "core/login.css" %}">
+{% endblock  %}
+
+{% block page_content %}
+
+<section>
+      <div class="p-5 bg-image"></div>
+
+      <div class="card-custom card mx-4 mx-md-5">
+      
+          <div class="card-body py-5">
+            <h2 class="fw-bold" style="text-align:center;">Log in!</h2>
+              <div class="form-login">
+
+                <form action="{% url 'login-page' %}" method="POST">
+                    {% csrf_token %}
+
+                        <div class ="form-controls{% if form.errors %} invalid {% endif %}">
+                          {{form}}
+                        </div>
+
+                        <div class="col">
+                          <!-- Simple link -->
+                          <br>
+                          Don't have account yet? <a class="ml-2" href="{% url 'register-page' %}">Sign In</a>
+                          <br><br>
+                          <a href="{% url 'password_reset' %}">Forgot password?</a>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="btn-class">
+                          <button class="btn btn-primary btn-block mb-4">Log In</button>
+                        </div>
+                </form>
+
+              </div>
+          </div>
+      </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Register{% endblock  %}
+
+{% block page_css_files %}
+<link rel="stylesheet" href="{% static "core/register.css" %}">
+{% endblock  %}
+
+{% block page_content %}
+
+<!-- Section: Design Block -->
+<section class="text-center ">
+    
+    <div class="p-5 bg-image"></div>
+    <!-- Background image -->
+  
+    <div class="custom-card card shadow-lg">
+          <div class="card-body p-5">
+          
+                <div class="d-flex justify-content-center">
+                          <div class="col-lg-8">
+                            <h2 class="fw-bold mb-5">Register now!</h2>
+                                    <div class="register-form">
+
+                                      <form action="{% url 'register-page' %}" method="POST">
+                                        {% csrf_token %}
+
+                                          {% for field in register_form %}
+
+                                              <div class ="form-controls{% if field.errors %} invalid {% endif %}">
+                                                {{field.label_tag}}
+                                                {{field}}
+                                                {{field.errors}}
+                                              </div>
+                                            
+                                          {% endfor %}
+
+                                            <div class="border-top pt-3" style="text-align:center;">
+                                              <small class="text-muted">
+                                                  Already Have an Account? <a class="ml-2" href="{% url 'login-page' %}">Sign In</a>
+                                              </small>
+                                            </div>
+                        
+                                          <!-- Submit button -->
+                                              <div class="btn-register">
+                                                <button type="submit" class="btn btn-primary btn-block mb-4">
+                                                  Register
+                                                </button>
+                                              </div>
+
+                                        </form>
+                                        
+                                    </div>
+                          </div>
+                </div>
+          </div>
+      </div>
+ 
+  </section>
+  <!-- Section: Design Block -->
+
+
+{% endblock  %}

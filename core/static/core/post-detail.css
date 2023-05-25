@@ -1,0 +1,36 @@
+.img-post-detail {
+    max-width: 50%;
+    height: auto;
+  }
+.img-class {
+    text-align: center;
+  }
+.button-group a{
+    /*flex-grow: 1;*/
+    width: 40%;
+
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+}
+.comment-text{
+  font-size: 13px;
+  margin-bottom:-0.5rem;
+}
+
+
+.button-reply {
+  font-size: 10px;
+}
+
+.form-control{
+  border:none;
+  border-bottom: solid 0.5px #6c5667;
+  resize: none;
+}
+
+.text-muted a{
+  text-decoration: none;
+  color: inherit;
+}

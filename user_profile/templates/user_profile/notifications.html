@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Notifications{% endblock  %}
+
+{% block page_content %}
+
+{% block page_css_files %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{% static "core/notify-liked-posts.css" %}">
+
+{% endblock  %}
+
+{% include "user_profile/includes/header.html" %}
+
+
+
+
+    <div class="container mt-5">
+
+        <form class="p-2 text-center" method="POST">
+          {% csrf_token %}
+          <input name="hide_delete_all" type="hidden"/>
+          <button class="btn btn-dark" >Delete all notifications</button>
+        </form>
+
+      {% for notification in notify %}
+
+          {% if notification.clicked != True %}
+          <div class="card mt-1">
+
+            <div class="card-header">
+              <h5 class="d-inline">{{notification.get_type_display}}</h5>
+              <span class="d-inline text-muted float-end small">{{notification.date}}</span>
+            </div>
+
+            <div class="d-flex card-body align-items-center"> 
+
+              <div class="me-2"><img class="rounded-circle article-img" src="{{notification.user_notify_sender.profile.profile_img.url}}" width="40" height="40" alt="image"/></div>
+              
+              {% if notification.type == 1 %}
+                <p class="h5 card-text"> {{notification.user_notify_sender}} - is following you!</p>
+                {% elif notification.type == 2 %}
+                <p class="h5 card-text">{{notification.user_notify_sender}} - commented your post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post}}</a>, "{{notification.notification_text}}"</p>
+                {% elif notification.type == 3 %}
+                <p class="h5 card-text">{{notification.user_notify_sender}} - replies to your comment in post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post}}</a>, "{{notification.notification_text}}"!</p>
+                {% elif notification.type == 4 %}
+                <p class="h5 card-text">{{notification.user_notify_sender}} - liked your post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post}}</a>, "{{notification.notification_text}}"!</p>
+              
+                {% endif %}
+              
+              <form class="ms-auto bd-highlight" method="POST">
+                {% csrf_token %}
+                <input class="p-2 bd-highlight" name="hide_not_v" type="hidden" value="{{notification.id}}"/>
+                <button class="btn btn-dark ms-auto p-2 bd-highlight">Delete</button>
+              </form>
+
+            </div>
+          </div>
+
+          {% endif %}
+      {%empty%}
+      <div class="text-center"><p class="fs-1">No notifications :[</p></div>
+      
+      {% endfor %}
+
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-2">
+
+            {% if notify.has_previous %}
+                <a class="page-link"  tabindex="-1" aria-disabled="true" href="?page=1">&laquo; First</a>
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="?page={{ notify.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <li class="page-item">
+                <span class="current"><a class="page-link" href="#">Page {{ notify.number }} of {{ notify.paginator.num_pages }}</a>
+                </span>
+            </li>
+
+          {% if notify.has_next %}
+            <li class="page-item">
+                <a class="page-link"  href="?page={{ notify.next_page_number }}">Next</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link"  href="?page={{ notify.paginator.num_pages }}">Last &raquo;</a>
+            </li>
+          {% endif %}
+
+        </ul>
+    </nav>
+
+    </div>
+    
+
+
+
+{% endblock  %}

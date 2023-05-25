@@ -1,0 +1,26 @@
+.liked-post{
+    box-shadow: 1px 3px 10px rgb(235, 235, 235);
+    transition: box-shadow .2s;
+}
+.liked-post:hover{
+    box-shadow: 1px 3px 10px rgb(197, 197, 197);
+}
+
+.liked-post a{
+    text-decoration: none;
+    color:black;
+}
+.page-link{
+    color:black;
+}
+
+
+.page-link:hover{
+    color:rgb(47, 47, 47);
+}
+
+
+.current a{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}

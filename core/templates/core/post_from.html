@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}Update {{post.pk}}{% endblock  %}
+
+{% block page_css_files %}
+<link rel="stylesheet" href="{% static "core/index.css" %}">
+<link rel="stylesheet" href="{% static "core/post-form.css" %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    
+    function auto_grow_content(element) {
+        element.style.height = "5px";
+        element.style.height = (20+element.scrollHeight)+"px";
+    }
+</script>
+
+<script>
+      var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+      };
+</script>
+{% endblock  %}
+
+{% block page_content %}
+
+{% include 'core/includes/header.html' %}
+
+<div class="mt-5 container">
+    <div class="bg-white rounded-3 border mt-5 p-2">
+        <form id="update-form" action="{% url 'post-update-page' post.pk %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                {{form.title.label}}
+                {{form.title}}
+                <hr>
+                {{form.content.label}} <br>
+                {{form.content.errors}} <br>
+                {{form.content}}<br>
+                <hr>
+
+                {{form.image}}
+                {{form.image.label}} <br>
+
+
+                <label for="id_image"> <!-- Cause id="id_image" in input of imagefield form-->
+                    <img class="img-button btn btn-lg p-2 bd-highlight" src="https://icon-library.com/images/upload-icon/upload-icon-15.jpg"/>
+                </label>
+
+                <hr>        
+
+                <div class="div-preview-added-photo p-2 bd-highlight"><img class="img-preview-added-photo" id="output"/> </div>
+                {% if post.image %}
+                <div class="img-div"><p>Currently:</p> 
+                    <img class="img-update-post" src="{{post.image.url}}">
+                </div>
+                <hr>   
+                    <p style="display:inline;">Delete photo:  {{form.remove_photo}}</p>
+                {% endif %}
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-dark btn-lg">Update</button>
+                <button type="button" class="btn btn-dark btn-lg" data-bs-dismiss="modal">Close</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock  %}

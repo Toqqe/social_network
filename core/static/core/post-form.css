@@ -1,0 +1,29 @@
+
+.content-field {
+    border: 1px solid #ced4da;
+    outline: none;
+    resize: none;
+    height: 8rem;
+    width: 100%;
+    border-radius: 0.25rem;
+}
+.id_image{
+    float:right;
+}
+.img-update-post{
+    height: auto;
+    width: 10rem;
+}
+.errorlist{
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0;
+    color: #d6000b;
+}
+.invalid input{
+    border-color: #d6000b;
+    background-color: #ffe5e7;
+}
+.container{
+    max-width: 70%;
+}

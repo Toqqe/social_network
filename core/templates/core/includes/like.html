@@ -1,0 +1,14 @@
+
+<form id="form-like" action="/" method="POST">
+    {% csrf_token %}
+
+    {% if user != post.author %}
+        {% if user in post.likes.all %}
+                <button id="like-{{post.id}}" type="type" name="post_id" value="{{post.id}}" class="btn btnhrt"><i style="color:red;" class="bi bi-suit-heart-fill"></i></button>
+        {% else %}
+            <button id="like-{{post.id}}" type="type" name="post_id" value="{{post.id}}" class="btn btnhrt"><i class="bi bi-suit-heart-fill"></i></button>
+        {% endif %}
+    {% endif %}
+    {{post.likes.all.count}}
+
+</form>

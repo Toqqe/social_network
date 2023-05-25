@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %}Test{% endblock  %}
+{% block page_css_files %}
+<link rel="stylesheet" href="{% static "core/index.css" %}">
+<link rel="stylesheet" href="{% static "core/post-detail.css" %}">
+<link rel="stylesheet" href="{% static "core/post-form.css" %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    
+    function auto_grow_content(element) {
+        element.style.height = "5px";
+        element.style.height = (20+element.scrollHeight)+"px";
+    }
+</script>
+
+<script>
+      var loadFile = function(event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+      };
+</script>
+<script>
+    $(document).ready(function() {
+        $('body').on('click', '.btnhrt', function(event) {
+          event.preventDefault();
+          var post_id = $(this).val();
+          var url = $(this).parent().attr('action');
+          var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+          var is_liked = $(this).hasClass("btnhrt--liked");
+          
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: {
+              'post_id': post_id,
+              'csrfmiddlewaretoken': csrftoken,
+            },
+            dataType: 'json',
+            success: function(response) {
+              $('#like-section-' + post_id).html(response['like_html']);
+    
+            },
+            error: function(response) {
+              console.log(response);
+            }
+          });
+        });
+      });
+</script>
+{% endblock  %}
+
+
+{% block page_content %}
+{% include 'core/includes/header.html' %}
+{% include 'core/includes/delete_modal.html' %}
+
+<div class="container-fluid mt-2">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-8">
+
+            {% if user.profile == post.author %}
+            <div class="button-group">
+                <a type="button" class="btn btn-dark" href="{% url 'post-update-page' post.pk %}">Edit</a>
+                <a type="button" style="margin-left:10px;" class="btn btn-dark" href="{% url 'post-delete-page' post.pk %}" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+            </div>
+            {% endif %}
+
+            <div class="bg-white rounded-3 border mt-5 p-2">
+                <article>
+                    <!-- Post header-->
+                    <header class="mb-4 text-break">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+                        <!-- Post meta content-->
+                        <div class="text-muted fst-italic mb-2"><a href="{% url 'user-profile' post.author %}" >@{{post.author}}</a></div>
+                        <div class="text-muted fst-italic mb-2">{{post.date_of_creation}}</div>
+                        <!-- Post categories-->
+                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">....</a>
+                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">....</a>
+                    </header>
+                    <!-- Preview image figure-->
+                    {% if post.image %}
+                    <div class="img-class mb-4 text-break"><img class="img-fluid rounded img-post-detail" src="{{post.image.url}}" alt="..." /></div>
+                    {% endif %}
+                    <hr>
+                    <!-- Post content-->
+                    <section class="mb-5 text-break">
+                        {{post.content}}
+                    </section>
+                    <div class="d-flex flex-row socials">
+                        <div class="p-2">
+                            <div id="like-section-{{post.id}}">{% include 'core/includes/like.html' %}</div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <section class="mb-5 text-break" style="margin-top:1rem;">
+                
+                <div class="card bg-light ">
+                    <div class="card-body">
+
+                        <form method="POST" class="d-flex mb-1 ">
+                            {% csrf_token %}
+                            <div class="flex-shrink-0 me-2"><img class="rounded-circle" src="{{user.profile.profile_img.url}}" width="40" height="40"/></div>
+                            {{comment_form}}
+                            <input type="hidden" name="post_pk" value={{post.pk}}>
+                            <button class="btn"><span id="boot-icon" class="bi bi-send"></span></button>
+                        
+                        </form>
+                    </div>
+                </div> 
+
+                        <div class="row d-flex justify-content-center align-items-center ">
+                            <div class="mx-2 ">
+                                
+                                {% for comment in comments %}
+                                        
+                                        {% if comment.reply == None %}
+                                            <div class="card bg-light rounded my-2">
+                                
+                                                <div class="card-body">
+                                                    <div class="d-flex"> 
+                                                        <img src="{{comment.user_name.profile.profile_img.url}}" width="40" height="40" class="rounded-circle mr-3">
+                                                        <div class="comment-text w-100">
+                                                            <div class="d-flex bd-highlight mr-auto">
+                                                                <div class="me-auto p-2 bd-highlight px-2"> <span class="mr-2 fw-normal fs-5">{{comment.user_name}}</span></div>
+                                                                <small class="p-2 bd-highlight text-black-50 time">{{comment.date_added | date:"M d, Y h:m"}}</small>
+                                                                <div class="bd-highlight">
+                                                                {% if request.user == comment.user_name or request.user == post.author.user  %}
+                                                                    <form method="POST">
+                                                                        {% csrf_token %}
+                                                                        <input type="hidden" name="comment_pk" value={{comment.pk}}>
+                                                                        <button class="btn"><small class="p-2 bd-highlight text-black-50 time">X</small></button>
+                                                                    </form>
+                                                                {% endif %}
+                                                                </div>
+                                                            </div>
+
+                                                            <p class="comment-text px-2">{{comment.text}}</p>
+
+                                                                {% for reply in comment.replies.all %} 
+                                                                <div class="d-flex my-3 rounded bd-highlight" style=" padding:0.2rem; background-color:#e9e9e1;">
+                                                        
+                                                                    <img src="{{reply.user_name.profile.profile_img.url}}" width="40" height="40" class="rounded-circle mr-3">
+                                                                        <div class="w-100">
+                                                                            <div class="d-flex bd-highlight mr-auto">
+                                                                                <div class="me-auto bd-highlight px-2"> <span class="mr-2 fw-normal">{{reply.user_name}}</span></div>
+                                                                                <small class="p-2 bd-highlight text-black-50 time"><span class="small">{{reply.date_added| date:"M d, Y h:m"}}</span></small>
+                                                                                <div class="bd-highlight">
+
+                                                                                {% if request.user == reply.user_name or request.user == post.author.user  %}
+
+                                                                                    <form method="POST">
+                                                                                        {% csrf_token %}
+                                                                                        <input type="hidden" name="reply_pk" value={{reply.pk}}>
+                                                                                        <button class="btn"><small class="p-2 bd-highlight text-black-50 time">X</small></button>
+                                                                                    </form>
+                                                                                {% endif %}
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <p class="small mb-0 px-2">
+                                                                                {{reply.text}}
+                                                                            </p>
+                                                                        </div>
+                                                                </div>
+                                                                
+
+                                                                {% endfor %}
+                                                        
+                                                            <div class="flex-row user-feed"> 
+                                                                    <form method="POST">
+                                                                        {% csrf_token %}
+                                                                            <input type="hidden" name="comment_id" value="{{comment.id}}">     
+                                                                            <div class="d-flex py-3"> 
+                                                                                <textarea class="form-control" required style="width: 100%; height:30%;" name="comment-reply" cols="40" rows="1"></textarea>
+                                                                                
+                                                                                <button class="btn"><span type="submit" class="button-reply mx-2 text-center "><i class="fa fa-comments-o text-center"></i>Reply</span></button> 
+                                                                            </div>
+                                                                    </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                            
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+            </section>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock  %} 

@@ -1,0 +1,54 @@
+{% load static %}
+{% load social_media_extras %}
+
+<header class="sticky-md-top p-3 bg-dark text-white">
+  <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+              <!-- Logo -->
+              <a class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none" href="/">     
+                  <img src="{% static 'images/final-logo.png' %}" height="45" alt="Social Network Logo" loading="lazy" /> 
+              </a>
+
+              <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              </ul>
+
+              <!-- Search Form -->
+
+              
+              <form action="{% url 'user-search' %}" method="POST" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-5">
+                {% csrf_token %}
+                <input id="user_search" name="search_query" type="search" class="form-control" placeholder="Search someone..." aria-label="Search" onchange="this.form.submit()">
+              </form>
+
+              <a href="{% url 'notification' %}" class="d-block link-dark text-decoration-none dropdown-toggle">
+                <i class="bi bi-bell" style="color:white;"></i>
+                  
+                  {% if notifications_read %}
+                    <span class="badge rounded-pill badge-notification bg-danger">&nbsp;</span>
+                  {% endif %}
+
+              </a>
+
+              <div class="dropdown text-end">
+
+                  {% if user.is_authenticated %}
+                  <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span style="color:white; margin-left:1rem; font-weight:bold;">{{user.get_username}} </span>
+                      <img src="{{user.profile.profile_img.url}}" class="rounded-circle" width="32" height="32" alt="Avatar" loading="lazy" />
+                  </a>
+                  {% endif %}
+
+                  <ul class="dropdown-menu text-small dropdown-menu-end" style="color:white;" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="{% url 'user-profile' request.user %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'liked-posts' %}">Liked posts</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'logout-page' %}">Log out</a></li>
+                  </ul>
+
+              </div>
+      </div>
+      
+  </div>
+
+</header>

@@ -1,0 +1,56 @@
+.element.style{
+    background: linear-gradient(to right top, #6305dd, #390281);
+    background-image: none;
+}
+
+.btn-primary {
+    background-color: #555555;
+    border-color: #353535;
+    margin: 1rem;
+
+}
+
+
+
+.register-form {
+    width: 90%;
+    max-width: 30rem;
+    margin: 5rem auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: left;
+}
+
+.btn-register{
+    text-align: center;
+}
+
+
+.invalid label{
+    color: #d6000b;
+}
+.invalid input,
+.invalid textarea{
+border-color: #d6000b;
+background-color: #ffe5e7;
+}
+
+.errorlist{
+list-style: none;
+margin: 0.5rem 0;
+padding: 0;
+color: #d6000b;
+
+}
+
+.bg-image{
+    background: linear-gradient(to right top, #717171, #3c3c3c);
+    height: 300px;
+}
+
+.custom-card{
+    margin-top: -100px;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+}

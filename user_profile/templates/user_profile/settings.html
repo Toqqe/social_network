@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}Settings {{user_profile.user}}{% endblock  %}
+{% block page_css_files %}
+<link rel="stylesheet" href="{% static "user_profile/settings.css" %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    function auto_grow(element) {
+        element.style.height = "5px";
+        element.style.height = (50+element.scrollHeight)+"px";
+    }
+</script>
+<script>
+    var loadFile = function(event) {
+        var output = document.getElementById('current-img');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function() {
+          URL.revokeObjectURL(output.src) // free memory
+        }
+      };
+</script>
+{% endblock  %}
+
+{% block page_content %}
+
+    {% include 'user_profile/includes/header.html' %}
+
+    <div class="container-xl px-4 mt-4">
+        <!-- Account page navigation-->
+
+        <hr class="mt-0 mb-4">
+        <div class="row">
+            <div class="col-xl-4">
+                <!-- Profile picture card-->
+                <div class="card mb-4 mb-xl-0">
+                    <div class="card-header">Profile Picture</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <img id="current-img" class="img-thumbnail" src="{{user_profile.profile_img.url}}" width="304" height="304" alt="">
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted mb-4">JPG or PNG</div>
+                        <!-- Profile picture upload button-->
+                        
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{profile_form.profile_img  }}
+
+                            {{profile_form.description.as_hidden}}
+                            {{user_form.username.as_hidden}}
+                            {{user_form.email.as_hidden}}
+
+                            <label for="id_profile_img">
+                                <div class="btn btn-dark">Upload Image</div>
+                            </label>
+                            <button class="btn btn-dark">Save Image</button>                            
+                        </form>
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{profile_form.description.as_hidden   }}
+                            {{profile_form.profile_img.as_hidden   }}
+                            {{user_form.username.as_hidden}}
+                            {{user_form.email.as_hidden}}
+                            <button class="btn btn-dark" id="clear" name="clear-img" type="submit">Delete image</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body">
+                        <form method="POST" >
+                            {% csrf_token %}
+                            <!-- Form Group (username)-->
+
+                            {% comment %} {% for field, errors in user_form.errors.items %}
+                                {{errors}}
+                            {% endfor %} {% endcomment %}
+
+                            <div class="mb-3 username {% if user_form.errors.username  %} invalid {% endif %}">
+                                {% for field, errors in user_form.errors.items %}
+                                    {% if field == user_form.username.label|lower %}
+                                        {{errors}}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {{user_form.username.label}}
+                                {{user_form.username}}
+                            </div>
+                            <!-- Form Row-->
+                            <div class="mb-3 email {% if user_form.errors.email   %} invalid {% endif %}">
+
+                                {% for field, errors in user_form.errors.items %}
+                                    {% if field == user_form.email.label|lower %}
+                                        {{errors}}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {{user_form.email.label}}
+                                {{user_form.email}}
+                            </div>
+                            <div class="mb-3 ">
+                            <!-- Save changes button-->
+                                {{profile_form.description.label }}
+                                {{profile_form.description }}
+                            </div>
+
+                            <hr>
+
+                                <button class="btn btn-dark" >Save changes</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock  %}

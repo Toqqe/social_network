@@ -1,0 +1,105 @@
+{% load static %}
+
+<div class="infinite-item">
+
+    <div class="bg-white border mt-5">
+        <div>
+            <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom" >
+                <div class="d-flex flex-row align-items-center px-2"><img class="rounded-circle" src="{{post.author.profile_img.url}}" width="50" height="45">
+                    <div class="d-flex flex-column flex-wrap" style="margin-left:1rem;">
+                        <span class="font-weight-bold">@<a href="{% url 'user-profile' post.author.user %}">{{post.author.user}}</a></span>
+                        <span class="creation-date text-black-50 time"><a href="{% url 'post-detail-page' post.pk %}" >{{post.date_of_creation}}</a></span>
+
+                    </div>
+
+                    
+                </div>
+                {% if user == post.author.user %}
+                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">...</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'post-detail-page' post.pk %}">Settings</a></li>
+                </ul>    
+                {% endif %}
+
+            </div>
+        </div>
+
+        {% if post.title %}
+        <div class="px-3 fs-2 text-break"><p>{{post.title}}</p></div>
+        {% endif %}
+
+        {% if post.content|length > 150 %}
+
+        <div class="half-content px-3 text-break" id="half-{{ post.pk }}">
+            {{post.content|safe|linebreaks|truncatechars:150}}
+        <a data-id="{{ post.pk }}" href="javascript:void(0);" class="show-hide-btn"><p>Read more</p></a></div>
+        <div class="full-content p-2 px-3 text-break" id="full-{{post.pk }}" style="display: none;">{{ post.content|safe|linebreaks }}
+            <a data-id="{{ post.pk}}" href="javascript:void(0);" class="show-hide-btn"><p>Read less</p></a></div>
+        
+        {% else %}
+        <div class="pt-3 px-3 text-break"><span>{{post.content|safe|truncatewords:"25"|linebreaks}}</span></div>
+        {% endif %}
+        
+        
+        {% if post.image %}
+        <img class="user-uploaded-image upp-2 px-3" alt="User Photo" src="{{post.image.url}}">
+        {% endif %}
+
+        <div class="d-flex flex-row socials">
+            <div class="p-2">
+                <div id="like-section-{{post.id}}">{% include 'core/includes/like.html' %}</div>
+            </div>
+           <div class="p-2"><a class="btn" href="{% url 'post-detail-page' post.pk %}"><i class="bi bi-chat"></i></a></div>
+        </div>
+    </div>
+    <div class="mb-6">
+        <div class="card bg-light">
+            <div class="card-body">
+                
+                <form method="POST" class="d-flex mb-1">
+                    {% csrf_token %}
+                    <div class="flex-shrink-0 me-2"><img class="rounded-circle" src="{{user.profile.profile_img.url}}" width="40" height="40"/></div>
+                    {{comment_form}}
+                    <input type="hidden" name="post_pk" value={{post.pk}}>
+
+                    <button class="btn"><span id="boot-icon" class="bi bi-send"></span></button>
+                </form>
+
+            </div>
+        </div>
+
+
+                {% for comment in post.post_comment.all %}
+
+                    {% if forloop.last %}
+                    <div class="card bg-light rounded">
+                        
+                        <div class="card-body" style="padding-bottom:0;">
+                            <div class="row d-flex">
+                                    <div class="d-flex"> 
+                                        <img src="{{comment.user_name.profile.profile_img.url}}" width="40" height="40" class="rounded-circle mr-3">
+                                            <div class="comment-text w-100 comment-text text-break">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex px-2"> <span class="fs-6 fw-normal">{{comment.user_name}}</span></div>
+                                                        <small class="text-black-50 time">{{comment.date_added | date:"M d, Y h:m"}}</small>
+                                                    </div>
+
+                                                    <p class="comment-text px-2 fw-light ">{{comment.text|truncatechars:"200"}}</p>
+                                                
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                        {% if forloop.counter >= 2 %}
+                        <div class="see-more text-center fs-6">
+                            <a href="{% url 'post-detail-page' post.pk %}">See more comments</a>
+                        </div>
+                        {% endif %}
+
+                    {% endif %}
+                {% endfor %}
+
+    </div>
+</div>
+
