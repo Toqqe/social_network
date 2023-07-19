@@ -181,8 +181,8 @@ class SignupPageView(View):
             user_login = authenticate(username=username, password=password)
             login(request, user_login)
 
-            user_model = User.objects.get(username=username)                ## Pobieramy model Usera, który został utworzony powyżej w modelu "User"
-            new_profile = Profile.objects.create(user=user_model, id=user_model.id) ## Tworzymy na podstawie "user_model" obiekt w naszym modelu Profile
+            user_model = User.objects.get(username=username)                                        ## Pobieramy model Usera, który został utworzony powyżej w modelu "User"
+            new_profile = Profile.objects.create(user=user_model, id=user_model.id)                 ## Tworzymy na podstawie "user_model" obiekt w naszym modelu Profile
             new_profile.save()
 
             return HttpResponseRedirect("/")
@@ -191,6 +191,7 @@ class SignupPageView(View):
                 "register_form": register_form
             })
         
+
 @method_decorator(login_required(login_url='/login'), name='dispatch')
 class PostDetailView(DetailView):
     template_name = "core/post-detail.html"
@@ -201,7 +202,7 @@ class PostDetailView(DetailView):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         post_object = context['post']
         context['comments'] = post_object.post_comment.all().order_by('-id')
-        context['notifications_read'] = self.request.user.notification_to_user.all().exclude(user_notify_sender=self.request.user),
+        context['notifications_read'] = self.request.user.notification_to_user.all().exclude(user_notify_sender=self.request.user)
         context['comment_form'] = CommentForm()
         
         return context

@@ -25,6 +25,22 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.core.validators",
         "kind": 6,
         "isExtraImport": true,
@@ -90,6 +106,70 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -115,6 +195,30 @@
         "documentation": {}
     },
     {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -152,22 +256,6 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
         "documentation": {}
     },
     {
@@ -291,14 +379,6 @@
         "documentation": {}
     },
     {
-        "label": "ValidationError",
-        "importPath": "django.core.exceptions",
-        "description": "django.core.exceptions",
-        "isExtraImport": true,
-        "detail": "django.core.exceptions",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -396,6 +476,14 @@
         "documentation": {}
     },
     {
+        "label": "notifications",
+        "importPath": "user_profile.views",
+        "description": "user_profile.views",
+        "isExtraImport": true,
+        "detail": "user_profile.views",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -413,14 +501,6 @@
     },
     {
         "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -532,14 +612,6 @@
         "documentation": {}
     },
     {
-        "label": "chain",
-        "importPath": "itertools",
-        "description": "itertools",
-        "isExtraImport": true,
-        "detail": "itertools",
-        "documentation": {}
-    },
-    {
         "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -580,14 +652,6 @@
         "documentation": {}
     },
     {
-        "label": "CreateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
         "label": "DeleteView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
@@ -604,19 +668,27 @@
         "documentation": {}
     },
     {
-        "label": "UpdateUserForm",
-        "importPath": "user_profile.forms",
-        "description": "user_profile.forms",
+        "label": "Q",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
         "isExtraImport": true,
-        "detail": "user_profile.forms",
+        "detail": "django.db.models",
         "documentation": {}
     },
     {
-        "label": "UpdateProfileform",
-        "importPath": "user_profile.forms",
-        "description": "user_profile.forms",
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
         "isExtraImport": true,
-        "detail": "user_profile.forms",
+        "detail": "django.core.paginator",
+        "documentation": {}
+    },
+    {
+        "label": "Paginator",
+        "importPath": "django.core.paginator",
+        "description": "django.core.paginator",
+        "isExtraImport": true,
+        "detail": "django.core.paginator",
         "documentation": {}
     },
     {
@@ -661,6 +733,14 @@
     },
     {
         "label": "Post",
+        "importPath": "core.models",
+        "description": "core.models",
+        "isExtraImport": true,
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Notification",
         "importPath": "core.models",
         "description": "core.models",
         "isExtraImport": true,
@@ -720,6 +800,78 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0004_alter_profile_description_notification",
+        "description": "core.migrations.0004_alter_profile_description_notification",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('core', '0003_alter_post_title'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='profile',\n            name='description',\n            field=models.TextField(blank=True, max_length=250),",
+        "detail": "core.migrations.0004_alter_profile_description_notification",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0005_remove_notification_clicked",
+        "description": "core.migrations.0005_remove_notification_clicked",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0004_alter_profile_description_notification'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='notification',\n            name='clicked',\n        ),\n    ]",
+        "detail": "core.migrations.0005_remove_notification_clicked",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0006_post_likes_alter_notification_type",
+        "description": "core.migrations.0006_post_likes_alter_notification_type",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('core', '0005_remove_notification_clicked'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='likes',\n            field=models.ManyToManyField(blank=True, related_name='postlikes', to=settings.AUTH_USER_MODEL),",
+        "detail": "core.migrations.0006_post_likes_alter_notification_type",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0007_alter_post_content",
+        "description": "core.migrations.0007_alter_post_content",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0006_post_likes_alter_notification_type'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='content',\n            field=models.TextField(max_length=2000, validators=[django.core.validators.MinLengthValidator(10)]),\n        ),",
+        "detail": "core.migrations.0007_alter_post_content",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0008_delete_tag",
+        "description": "core.migrations.0008_delete_tag",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0007_alter_post_content'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='Tag',\n        ),\n    ]",
+        "detail": "core.migrations.0008_delete_tag",
+        "documentation": {}
+    },
+    {
+        "label": "python_all",
+        "kind": 2,
+        "importPath": "core.templatetags.social_media_extras",
+        "description": "core.templatetags.social_media_extras",
+        "peekOfCode": "def python_all(values):\n    return all(values)\n@register.filter(name='python_any')\ndef python_any(values):\n    return any(values)",
+        "detail": "core.templatetags.social_media_extras",
+        "documentation": {}
+    },
+    {
+        "label": "python_any",
+        "kind": 2,
+        "importPath": "core.templatetags.social_media_extras",
+        "description": "core.templatetags.social_media_extras",
+        "peekOfCode": "def python_any(values):\n    return any(values)",
+        "detail": "core.templatetags.social_media_extras",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "core.templatetags.social_media_extras",
+        "description": "core.templatetags.social_media_extras",
+        "peekOfCode": "register = template.Library()\n@register.filter(name='python_all')\ndef python_all(values):\n    return all(values)\n@register.filter(name='python_any')\ndef python_any(values):\n    return any(values)",
+        "detail": "core.templatetags.social_media_extras",
+        "documentation": {}
+    },
+    {
         "label": "CoreConfig",
         "kind": 6,
         "importPath": "core.apps",
@@ -742,7 +894,7 @@
         "kind": 6,
         "importPath": "core.forms",
         "description": "core.forms",
-        "peekOfCode": "class RegisterForm(UserCreationForm):\n    username = forms.RegexField(max_length=30, required=True,regex=r\"^[\\w.@+-]+$\", \n                                error_messages={\n                                    'invalid': (\"This value may contain only letters, numbers and \" \"@/./+/-/_ characters.\")})\n    password1 = forms.CharField(label=\"Password\", required=True ,widget=forms.PasswordInput())\n    password2 = forms.CharField(label=\"Password confirmation\", required=True,widget=forms.PasswordInput(),help_text=(\"Enter the same password as above, for verification.\"))\n    email = forms.CharField(required=True, validators= [validate_email])\n    username.widget.attrs['class'] = \"form-control\"\n    password1.widget.attrs['class'] = \"form-control\"\n    password2.widget.attrs['class'] = \"form-control\"",
+        "peekOfCode": "class RegisterForm(UserCreationForm):\n    username = forms.RegexField(max_length=30, required=True,regex=r\"^[\\w.@+-]+$\", \n                                error_messages={\n                                    'invalid': (\"This value may contain only letters, numbers and \" \"@/./+/-/_ characters.\")})\n    password1 = forms.CharField(label=\"Password\", required=True ,widget=forms.PasswordInput())\n    password2 = forms.CharField(label=\"Password confirmation\", required=True,widget=forms.PasswordInput(),\n                                help_text=(\"Enter the same password as above, for verification.\"))\n    email = forms.CharField(required=True, validators= [validate_email])\n    username.widget.attrs['class'] = \"form-control\"\n    password1.widget.attrs['class'] = \"form-control\"",
         "detail": "core.forms",
         "documentation": {}
     },
@@ -769,7 +921,7 @@
         "kind": 6,
         "importPath": "core.forms",
         "description": "core.forms",
-        "peekOfCode": "class CommentForm(forms.ModelForm):\n    text = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control comment-area','cols':'40','rows':'1', 'type':'text'}), label='')\n    class Meta:\n        model = Comment\n        fields = ['text']",
+        "peekOfCode": "class CommentForm(forms.ModelForm):\n    text = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control comment-area','cols':'40','rows':'1', 'type':'text', 'oninput':'auto_grow_content(this)'}), label='', max_length=400)\n    class Meta:\n        model = Comment\n        fields = ['text']",
         "detail": "core.forms",
         "documentation": {}
     },
@@ -778,7 +930,7 @@
         "kind": 2,
         "importPath": "core.forms",
         "description": "core.forms",
-        "peekOfCode": "def validate_email(value):\n    if User.objects.filter(email = value).exists():\n        raise ValidationError( (f\"{value} is taken.\"), params = {'value':value})\nclass RegisterForm(UserCreationForm):\n    username = forms.RegexField(max_length=30, required=True,regex=r\"^[\\w.@+-]+$\", \n                                error_messages={\n                                    'invalid': (\"This value may contain only letters, numbers and \" \"@/./+/-/_ characters.\")})\n    password1 = forms.CharField(label=\"Password\", required=True ,widget=forms.PasswordInput())\n    password2 = forms.CharField(label=\"Password confirmation\", required=True,widget=forms.PasswordInput(),help_text=(\"Enter the same password as above, for verification.\"))\n    email = forms.CharField(required=True, validators= [validate_email])",
+        "peekOfCode": "def validate_email(value):\n    if User.objects.filter(email = value).exists():\n        raise ValidationError( (f\"{value} is taken.\"), params = {'value':value})\nclass RegisterForm(UserCreationForm):\n    username = forms.RegexField(max_length=30, required=True,regex=r\"^[\\w.@+-]+$\", \n                                error_messages={\n                                    'invalid': (\"This value may contain only letters, numbers and \" \"@/./+/-/_ characters.\")})\n    password1 = forms.CharField(label=\"Password\", required=True ,widget=forms.PasswordInput())\n    password2 = forms.CharField(label=\"Password confirmation\", required=True,widget=forms.PasswordInput(),\n                                help_text=(\"Enter the same password as above, for verification.\"))",
         "detail": "core.forms",
         "documentation": {}
     },
@@ -787,16 +939,7 @@
         "kind": 6,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "class Profile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    profile_img = models.ImageField(upload_to='profile_images', default='blank-usr-img.png')\n    description = models.TextField(blank=True, max_length=250)\n    following = models.ManyToManyField(User, related_name=\"following\", blank=True)\n    created = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.user}\"\nclass Tag(models.Model):\n    caption = models.CharField(max_length=20)",
-        "detail": "core.models",
-        "documentation": {}
-    },
-    {
-        "label": "Tag",
-        "kind": 6,
-        "importPath": "core.models",
-        "description": "core.models",
-        "peekOfCode": "class Tag(models.Model):\n    caption = models.CharField(max_length=20)\n    def __str__(self):\n        return self.caption\nclass Post(models.Model):\n    title = models.TextField(max_length=80, blank=True)\n    image = models.ImageField(upload_to=\"post_images\", null=True, blank=True)\n    date_of_creation = models.DateField(auto_now=False, auto_now_add=True)\n    content = models.TextField(validators=[MinLengthValidator(10)])\n    author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, related_name=\"user_created_posts\")",
+        "peekOfCode": "class Profile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    profile_img = models.ImageField(upload_to='profile_images', default='blank-usr-img.png')\n    description = models.TextField(blank=True, max_length=250)\n    following = models.ManyToManyField(User, related_name=\"following\", blank=True)\n    created = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.user}\"\nclass Post(models.Model):\n    title = models.TextField(max_length=80, blank=True)",
         "detail": "core.models",
         "documentation": {}
     },
@@ -805,7 +948,7 @@
         "kind": 6,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "class Post(models.Model):\n    title = models.TextField(max_length=80, blank=True)\n    image = models.ImageField(upload_to=\"post_images\", null=True, blank=True)\n    date_of_creation = models.DateField(auto_now=False, auto_now_add=True)\n    content = models.TextField(validators=[MinLengthValidator(10)])\n    author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, related_name=\"user_created_posts\")\n    def __str__(self):\n        return f\"{self.title} - {self.author} - {self.id}\"\nclass Comment(models.Model):\n    user_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name=\"user_commented_post\")",
+        "peekOfCode": "class Post(models.Model):\n    title = models.TextField(max_length=80, blank=True)\n    image = models.ImageField(upload_to=\"post_images\", null=True, blank=True)\n    date_of_creation = models.DateField(auto_now=False, auto_now_add=True)\n    content = models.TextField(validators=[MinLengthValidator(10)], max_length=2000)\n    likes = models.ManyToManyField(User, related_name=\"postlikes\", blank=True)\n    author = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, related_name=\"user_created_posts\")\n    def __str__(self):\n        return f\"{self.title} - {self.id}\"\nclass Comment(models.Model):",
         "detail": "core.models",
         "documentation": {}
     },
@@ -814,7 +957,16 @@
         "kind": 6,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "class Comment(models.Model):\n    user_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name=\"user_commented_post\")\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=False, related_name=\"post_comment\" )\n    text = models.TextField(max_length=400)\n    date_added = models.DateTimeField(auto_now_add=True)\n    reply = models.ForeignKey('self', null=True, related_name=\"replies\", on_delete=models.CASCADE)",
+        "peekOfCode": "class Comment(models.Model):\n    user_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name=\"user_commented_post\")\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=False, related_name=\"post_comment\" )\n    text = models.TextField(max_length=400)\n    date_added = models.DateTimeField(auto_now_add=True)\n    reply = models.ForeignKey('self', null=True, related_name=\"replies\", on_delete=models.CASCADE)\nclass Notification(models.Model):\n    N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"post_notification\", blank=True, null=True)\n    user_notify = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_to_user\")",
+        "detail": "core.models",
+        "documentation": {}
+    },
+    {
+        "label": "Notification",
+        "kind": 6,
+        "importPath": "core.models",
+        "description": "core.models",
+        "peekOfCode": "class Notification(models.Model):\n    N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"post_notification\", blank=True, null=True)\n    user_notify = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_to_user\")\n    user_notify_sender = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_from_user\")\n    type = models.IntegerField(choices=N_CHOICES)\n    notification_text = models.CharField(max_length=100, blank=False)\n    date = models.DateField(auto_now=False, auto_now_add=True)\n    def __str__(self):\n        return f\"{self.id} - {self.post} - {self.user_notify} - {self.user_notify_sender} - {self.type}\"",
         "detail": "core.models",
         "documentation": {}
     },
@@ -823,7 +975,7 @@
         "kind": 5,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "User = get_user_model()\nclass Profile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    profile_img = models.ImageField(upload_to='profile_images', default='blank-usr-img.png')\n    description = models.TextField(blank=True, max_length=250)\n    following = models.ManyToManyField(User, related_name=\"following\", blank=True)\n    created = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.user}\"\nclass Tag(models.Model):",
+        "peekOfCode": "User = get_user_model()\nclass Profile(models.Model):\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    profile_img = models.ImageField(upload_to='profile_images', default='blank-usr-img.png')\n    description = models.TextField(blank=True, max_length=250)\n    following = models.ManyToManyField(User, related_name=\"following\", blank=True)\n    created = models.DateTimeField(auto_now_add=True)\n    def __str__(self):\n        return f\"{self.user}\"\nclass Post(models.Model):",
         "detail": "core.models",
         "documentation": {}
     },
@@ -841,7 +993,7 @@
         "kind": 6,
         "importPath": "core.views",
         "description": "core.views",
-        "peekOfCode": "class MainFeedbackWallView(View):\n    def get(self, request):\n        add_post_form = AddPost()\n        comment_form = CommentForm()\n        all_posts = Post.objects.all().order_by(\"-id\")\n        filtered_posts_by_following_users = filtered_posts(request.user)\n        context = {\n            \"all_posts\" : all_posts,\n            \"add_post_form\": add_post_form,\n            \"users_filtered_posts\": filtered_posts_by_following_users,",
+        "peekOfCode": "class MainFeedbackWallView(View):\n    def get(self, request):\n        if str(request.user) == \"mateusz\":\n            all_posts = Post.objects.all().order_by(\"-id\")\n            context = {\n            \"all_posts\" : all_posts,\n            }\n            return render(request, \"core/index.html\", context)\n        else:\n            add_post_form = AddPost()",
         "detail": "core.views",
         "documentation": {}
     },
@@ -859,7 +1011,7 @@
         "kind": 6,
         "importPath": "core.views",
         "description": "core.views",
-        "peekOfCode": "class PostDetailView(DetailView):\n    template_name = \"core/post-detail.html\"\n    model = Post\n    def get_context_data(self, **kwargs):\n        context = super(PostDetailView, self).get_context_data(**kwargs)\n        post_object = context['post']\n        context['comments'] = post_object.post_comment.all().order_by('-id')\n        context['comment_form'] = CommentForm()\n        return context\n    def post(self, request, pk):",
+        "peekOfCode": "class PostDetailView(DetailView):\n    template_name = \"core/post-detail.html\"\n    model = Post\n    def get_context_data(self, **kwargs):\n        context = super(PostDetailView, self).get_context_data(**kwargs)\n        post_object = context['post']\n        context['comments'] = post_object.post_comment.all().order_by('-id')\n        context['notifications_read'] = self.request.user.notification_to_user.all().exclude(user_notify_sender=self.request.user)\n        context['comment_form'] = CommentForm()\n        return context",
         "detail": "core.views",
         "documentation": {}
     },
@@ -886,7 +1038,25 @@
         "kind": 2,
         "importPath": "core.views",
         "description": "core.views",
-        "peekOfCode": "def filtered_posts(active_site_user):\n    if str(active_site_user) != \"mateusz\":\n        active_user_profile = Profile.objects.get(pk=active_site_user.id) \n        following_users_pk = active_user_profile.following.all().values_list('pk', flat=True) ##.user_created_posts.all().values_list( 'pk', flat=True)\n        filtered_posts_by_following_users = Post.objects.filter(author__pk__in=following_users_pk ).order_by(\"-date_of_creation\")\n        ##posts_by_user = Post.objects.all().filter(author__pk=active_user_profile.user.id).order_by(\"-date_of_creation\")\n        posts_by_user = active_user_profile.user_created_posts.all().order_by(\"-date_of_creation\")\n        merge_list = filtered_posts_by_following_users | posts_by_user\n    else:\n        merge_list = None",
+        "peekOfCode": "def filtered_posts(active_site_user):\n    if str(active_site_user) != \"mateusz\":\n        active_user_profile = Profile.objects.get(pk=active_site_user.id) \n        following_users_pk = active_user_profile.following.all().values_list('pk', flat=True) ##.user_created_posts.all().values_list( 'pk', flat=True)\n        filtered_posts_by_following_users = Post.objects.filter(author__pk__in=following_users_pk ).order_by(\"-date_of_creation\")\n        ##posts_by_user = Post.objects.all().filter(author__pk=active_user_profile.user.id).order_by(\"-date_of_creation\")\n        posts_by_user = active_user_profile.user_created_posts.all().order_by(\"-id\")\n        merge_list = filtered_posts_by_following_users | posts_by_user\n    else:\n        merge_list = None",
+        "detail": "core.views",
+        "documentation": {}
+    },
+    {
+        "label": "shared_followers",
+        "kind": 2,
+        "importPath": "core.views",
+        "description": "core.views",
+        "peekOfCode": "def shared_followers(current_user):\n    current_user_profile = Profile.objects.get(pk=current_user.id)\n    following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika\n    filered_users_by_shared_follows = User.objects.filter(following__pk__in=following_users_pk).order_by(\"-id\") ## użytkownicy, którzy sa obserwowani przez naszych obserwujących\n    final_list = filered_users_by_shared_follows.exclude(Q(id__in=following_users_pk.values_list('id', flat=True)) | Q(username=current_user_profile.user))\n    return final_list\n@method_decorator(login_required(login_url='/login'), name='dispatch')\nclass MainFeedbackWallView(View):\n    def get(self, request):\n        if str(request.user) == \"mateusz\":",
+        "detail": "core.views",
+        "documentation": {}
+    },
+    {
+        "label": "liked_posts",
+        "kind": 2,
+        "importPath": "core.views",
+        "description": "core.views",
+        "peekOfCode": "def liked_posts(request):\n    user = request.user\n    user_liked_posts = user.postlikes.all()\n    paginator = Paginator(user_liked_posts, 20) \n    page_number = request.GET.get(\"page\")\n    page_obj = paginator.get_page(page_number)\n    context = {\n        \"liked_posts\" : user_liked_posts,\n        \"page_obj\":page_obj\n    }",
         "detail": "core.views",
         "documentation": {}
     },
@@ -1147,7 +1317,7 @@
         "kind": 6,
         "importPath": "user_profile.views",
         "description": "user_profile.views",
-        "peekOfCode": "class ProfileDetailView(View):\n    def get(self, request, user):\n        user = get_object_or_404(User, username=user)\n        user_profile = user.profile\n        user_posts = user_profile.user_created_posts.all().order_by(\"-id\") ## Wszystkie posty utworzone przez X usera\n        is_user_same_as_authenticated = is_user_authenticated(user, request.user)\n        following = is_following(user_profile.id, request.user.id)\n        comment_form = CommentForm()\n        context = {\n            \"following\" : following,",
+        "peekOfCode": "class ProfileDetailView(View):\n    def get(self, request, user):\n        comment_form = CommentForm()\n        user = get_object_or_404(User, username=user)\n        user_profile = user.profile\n        user_posts = user_profile.user_created_posts.all().order_by(\"-id\") ## Wszystkie posty utworzone przez X usera\n        is_user_same_as_authenticated = is_user_authenticated(user, request.user)\n        following = is_following(user_profile.id, request.user.id)\n        paginator = Paginator(user_posts, 5) \n        page_number = request.GET.get(\"page\")",
         "detail": "user_profile.views",
         "documentation": {}
     },
@@ -1174,7 +1344,7 @@
         "kind": 2,
         "importPath": "user_profile.views",
         "description": "user_profile.views",
-        "peekOfCode": "def index(request):\n    active_user = str(request.user.profile.user).lower()\n    redirect_path = reverse(\"user-profile\", args=[active_user])\n    return HttpResponseRedirect(redirect_path)\n@login_required(login_url='/login')\ndef search(request):\n    forwarded_value = request.POST['search_query']\n    users = User.objects.filter(username__contains=forwarded_value).exclude(is_superuser=True) ## Wszyscy, którzy zawierają podaną frazę w wyszkiwarce\n    current_user_profile = Profile.objects.get(user=request.user) ## Profil obecnego użytkownika\n    following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika",
+        "peekOfCode": "def index(request):\n    active_user = str(request.user.profile.user).lower()\n    redirect_path = reverse(\"user-profile\", args=[active_user])\n    return HttpResponseRedirect(redirect_path)\n@login_required(login_url='/login')\ndef search(request):\n    if \"search_query\" not in request.POST:\n        forwarded_value = \"\"\n    else:\n        forwarded_value = request.POST['search_query']",
         "detail": "user_profile.views",
         "documentation": {}
     },
@@ -1183,7 +1353,7 @@
         "kind": 2,
         "importPath": "user_profile.views",
         "description": "user_profile.views",
-        "peekOfCode": "def search(request):\n    forwarded_value = request.POST['search_query']\n    users = User.objects.filter(username__contains=forwarded_value).exclude(is_superuser=True) ## Wszyscy, którzy zawierają podaną frazę w wyszkiwarce\n    current_user_profile = Profile.objects.get(user=request.user) ## Profil obecnego użytkownika\n    following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika\n    filered_users_by_shared_follows = User.objects.filter(following__pk__in=following_users_pk).order_by(\"-id\") ## użytkownicy, którzy sa obserwowani przez naszych obserwujących\n    context = {\n        \"users\": users,\n        \"shared_proifles\":filered_users_by_shared_follows,\n        \"all_current_user_follows\":current_user_profile.following.all(),",
+        "peekOfCode": "def search(request):\n    if \"search_query\" not in request.POST:\n        forwarded_value = \"\"\n    else:\n        forwarded_value = request.POST['search_query']\n    users = User.objects.filter(username__contains=forwarded_value).exclude(is_superuser=True).order_by(\"username\") ## Wszyscy, którzy zawierają podaną frazę w wyszkiwarce\n    current_user_profile = Profile.objects.get(user=request.user) ## Profil obecnego użytkownika\n    following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika\n    filered_users_by_shared_follows = User.objects.filter(following__pk__in=following_users_pk).order_by(\"-id\") ## użytkownicy, którzy sa obserwowani przez naszych obserwujących\n    paginator = Paginator(users, 20) ",
         "detail": "user_profile.views",
         "documentation": {}
     },
@@ -1193,6 +1363,15 @@
         "importPath": "user_profile.views",
         "description": "user_profile.views",
         "peekOfCode": "def user_settings(request):\n    active_user_profile = Profile.objects.get(pk=request.user.id)\n    if request.method == 'POST':\n        user_form = UpdateUserForm(request.POST, instance=request.user, user=request.user)\n        profile_form = UpdateProfileform(request.POST, request.FILES, instance=request.user.profile)\n        if \"clear-img\" in request.POST:\n            tmp_profile_form = profile_form.save(commit=False)\n            tmp_profile_form.profile_img = '/blank-usr-img.png'\n            tmp_profile_form.save()\n            return redirect('user-settings')",
+        "detail": "user_profile.views",
+        "documentation": {}
+    },
+    {
+        "label": "notifications",
+        "kind": 2,
+        "importPath": "user_profile.views",
+        "description": "user_profile.views",
+        "peekOfCode": "def notifications(request):\n    user = request.user\n    user_notify = Notification.objects.filter(user_notify=user).order_by('-date').exclude(user_notify_sender=user)\n    if \"hide_not_v\" in request.POST:\n        not_value = request.POST['hide_not_v']\n        notification_obj = Notification.objects.get(pk=not_value)\n        notification_obj.delete()\n    if \"hide_delete_all\" in request.POST:\n        user_notify.delete()\n    paginator = Paginator(user_notify, 20) ",
         "detail": "user_profile.views",
         "documentation": {}
     },

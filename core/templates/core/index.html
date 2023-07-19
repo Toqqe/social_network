@@ -96,7 +96,7 @@
       var url = $(this).parent().attr('action');
       var csrftoken = $("[name=csrfmiddlewaretoken]").val();
       var is_liked = $(this).hasClass("btnhrt--liked");
-      
+
       $.ajax({
         type: "POST",
         url: url,
@@ -193,6 +193,7 @@
                                 
                                 {% if user.get_username != "mateusz" %}
                                       <div class="infinite-container">
+
                                         {% for post in page_obj %}
                                             {% include 'core/includes/post.html' %}
                                             {% empty %}
@@ -203,6 +204,7 @@
 
                                       
                                       {% if page_obj.has_next %}
+                                      
                                           <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
                                           <div class="d-flex justify-content-center" style="display:none;">
                                             <div class="spinner-border" role="status">
