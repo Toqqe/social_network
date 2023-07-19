@@ -28,7 +28,8 @@ class RegisterForm(UserCreationForm):
                                     'invalid': ("This value may contain only letters, numbers and " "@/./+/-/_ characters.")})
 
     password1 = forms.CharField(label="Password", required=True ,widget=forms.PasswordInput())
-    password2 = forms.CharField(label="Password confirmation", required=True,widget=forms.PasswordInput(),help_text=("Enter the same password as above, for verification."))
+    password2 = forms.CharField(label="Password confirmation", required=True,widget=forms.PasswordInput(),
+                                help_text=("Enter the same password as above, for verification."))
 
     email = forms.CharField(required=True, validators= [validate_email])
 

@@ -174,7 +174,6 @@ class SignupPageView(View):
             username = request.POST['username']
             email = request.POST['email']
             password = request.POST['password1']
-            password2 = request.POST['password2']
 
             user = User.objects.create_user(username=username, email=email, password=password)
             user.save()
