@@ -4,5 +4,5 @@ Web application, created with Python, Django, JS, CSS -  for the purpose of pass
 
 # Requirements:
 
-Django==4.1.4
+Django==4.1.4,
 python-dotenv==1.0.1
