@@ -9,10 +9,10 @@ from user_profile.views import notifications
 
 urlpatterns = [
     path("", views.MainFeedbackWallView.as_view(), name="main-page"),
-    ##path("login", auth_views.LoginView.as_view(template_name='core/login.html'), name='login-page'),
+
     path("login", auth_views.LoginView.as_view(template_name="core/login.html", authentication_form=LoginForm), name="login-page"),
     path("logout", auth_views.LogoutView.as_view(template_name="core/logout.html"), name="logout-page"),
-    #path("login", views.LoginPageView.as_view(), name="login-page"),
+
     path("register", views.SignupPageView.as_view(), name="register-page"),
     
     path("post/<int:pk>", views.PostDetailView.as_view(), name="post-detail-page"),

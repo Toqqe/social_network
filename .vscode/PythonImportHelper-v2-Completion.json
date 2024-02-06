@@ -41,6 +41,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "django.core.validators",
         "kind": 6,
         "isExtraImport": true,
@@ -130,6 +138,54 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -163,6 +219,86 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -195,30 +331,6 @@
         "documentation": {}
     },
     {
-        "label": "template",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -256,6 +368,22 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -481,6 +609,22 @@
         "description": "user_profile.views",
         "isExtraImport": true,
         "detail": "user_profile.views",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -777,98 +921,143 @@
         "kind": 6,
         "importPath": "core.migrations.0001_initial",
         "description": "core.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Tag',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Comment',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "core.migrations.0001_initial",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0002_alter_post_title",
-        "description": "core.migrations.0002_alter_post_title",
+        "importPath": "core.migrations.0002_alter_notification_comment_id",
+        "description": "core.migrations.0002_alter_notification_comment_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='notification',\n            name='comment_id',\n            field=models.OneToOneField(blank=True, on_delete=django.db.models.deletion.CASCADE, to='core.comment'),\n        ),",
+        "detail": "core.migrations.0002_alter_notification_comment_id",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0003_alter_notification_comment_id",
+        "description": "core.migrations.0003_alter_notification_comment_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0002_alter_notification_comment_id'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='notification',\n            name='comment_id',\n            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='core.comment'),\n        ),",
+        "detail": "core.migrations.0003_alter_notification_comment_id",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0001_initial",
+        "description": "core.migrations-old.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Tag',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "core.migrations-old.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0002_alter_post_title",
+        "description": "core.migrations-old.0002_alter_post_title",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='title',\n            field=models.TextField(blank=True, max_length=50),\n        ),",
-        "detail": "core.migrations.0002_alter_post_title",
+        "detail": "core.migrations-old.0002_alter_post_title",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0003_alter_post_title",
-        "description": "core.migrations.0003_alter_post_title",
+        "importPath": "core.migrations-old.0003_alter_post_title",
+        "description": "core.migrations-old.0003_alter_post_title",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0002_alter_post_title'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='title',\n            field=models.TextField(blank=True, max_length=80),\n        ),",
-        "detail": "core.migrations.0003_alter_post_title",
+        "detail": "core.migrations-old.0003_alter_post_title",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0004_alter_profile_description_notification",
-        "description": "core.migrations.0004_alter_profile_description_notification",
+        "importPath": "core.migrations-old.0004_alter_profile_description_notification",
+        "description": "core.migrations-old.0004_alter_profile_description_notification",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('core', '0003_alter_post_title'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='profile',\n            name='description',\n            field=models.TextField(blank=True, max_length=250),",
-        "detail": "core.migrations.0004_alter_profile_description_notification",
+        "detail": "core.migrations-old.0004_alter_profile_description_notification",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0005_remove_notification_clicked",
-        "description": "core.migrations.0005_remove_notification_clicked",
+        "importPath": "core.migrations-old.0005_remove_notification_clicked",
+        "description": "core.migrations-old.0005_remove_notification_clicked",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0004_alter_profile_description_notification'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='notification',\n            name='clicked',\n        ),\n    ]",
-        "detail": "core.migrations.0005_remove_notification_clicked",
+        "detail": "core.migrations-old.0005_remove_notification_clicked",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0006_post_likes_alter_notification_type",
-        "description": "core.migrations.0006_post_likes_alter_notification_type",
+        "importPath": "core.migrations-old.0006_post_likes_alter_notification_type",
+        "description": "core.migrations-old.0006_post_likes_alter_notification_type",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('core', '0005_remove_notification_clicked'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='post',\n            name='likes',\n            field=models.ManyToManyField(blank=True, related_name='postlikes', to=settings.AUTH_USER_MODEL),",
-        "detail": "core.migrations.0006_post_likes_alter_notification_type",
+        "detail": "core.migrations-old.0006_post_likes_alter_notification_type",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0007_alter_post_content",
-        "description": "core.migrations.0007_alter_post_content",
+        "importPath": "core.migrations-old.0007_alter_post_content",
+        "description": "core.migrations-old.0007_alter_post_content",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0006_post_likes_alter_notification_type'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='post',\n            name='content',\n            field=models.TextField(max_length=2000, validators=[django.core.validators.MinLengthValidator(10)]),\n        ),",
-        "detail": "core.migrations.0007_alter_post_content",
+        "detail": "core.migrations-old.0007_alter_post_content",
         "documentation": {}
     },
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "core.migrations.0008_delete_tag",
-        "description": "core.migrations.0008_delete_tag",
+        "importPath": "core.migrations-old.0008_delete_tag",
+        "description": "core.migrations-old.0008_delete_tag",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0007_alter_post_content'),\n    ]\n    operations = [\n        migrations.DeleteModel(\n            name='Tag',\n        ),\n    ]",
-        "detail": "core.migrations.0008_delete_tag",
+        "detail": "core.migrations-old.0008_delete_tag",
         "documentation": {}
     },
     {
-        "label": "python_all",
-        "kind": 2,
-        "importPath": "core.templatetags.social_media_extras",
-        "description": "core.templatetags.social_media_extras",
-        "peekOfCode": "def python_all(values):\n    return all(values)\n@register.filter(name='python_any')\ndef python_any(values):\n    return any(values)",
-        "detail": "core.templatetags.social_media_extras",
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0009_alter_notification_date",
+        "description": "core.migrations-old.0009_alter_notification_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0008_delete_tag'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='notification',\n            name='date',\n            field=models.DateTimeField(auto_now_add=True),\n        ),",
+        "detail": "core.migrations-old.0009_alter_notification_date",
         "documentation": {}
     },
     {
-        "label": "python_any",
-        "kind": 2,
-        "importPath": "core.templatetags.social_media_extras",
-        "description": "core.templatetags.social_media_extras",
-        "peekOfCode": "def python_any(values):\n    return any(values)",
-        "detail": "core.templatetags.social_media_extras",
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0010_alter_comment_date_added_alter_notification_date",
+        "description": "core.migrations-old.0010_alter_comment_date_added_alter_notification_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0009_alter_notification_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='comment',\n            name='date_added',\n            field=models.DateField(auto_now_add=True),\n        ),",
+        "detail": "core.migrations-old.0010_alter_comment_date_added_alter_notification_date",
         "documentation": {}
     },
     {
-        "label": "register",
-        "kind": 5,
-        "importPath": "core.templatetags.social_media_extras",
-        "description": "core.templatetags.social_media_extras",
-        "peekOfCode": "register = template.Library()\n@register.filter(name='python_all')\ndef python_all(values):\n    return all(values)\n@register.filter(name='python_any')\ndef python_any(values):\n    return any(values)",
-        "detail": "core.templatetags.social_media_extras",
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0011_alter_comment_date_added",
+        "description": "core.migrations-old.0011_alter_comment_date_added",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0010_alter_comment_date_added_alter_notification_date'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='comment',\n            name='date_added',\n            field=models.DateTimeField(auto_now_add=True),\n        ),",
+        "detail": "core.migrations-old.0011_alter_comment_date_added",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0012_alter_notification_date",
+        "description": "core.migrations-old.0012_alter_notification_date",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0011_alter_comment_date_added'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='notification',\n            name='date',\n            field=models.DateTimeField(auto_now_add=True),\n        ),",
+        "detail": "core.migrations-old.0012_alter_notification_date",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations-old.0013_notification_comment_id",
+        "description": "core.migrations-old.0013_notification_comment_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('core', '0012_alter_notification_date'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='notification',\n            name='comment_id',\n            field=models.OneToOneField(default=0, on_delete=django.db.models.deletion.CASCADE, to='core.comment'),\n            preserve_default=False,",
+        "detail": "core.migrations-old.0013_notification_comment_id",
         "documentation": {}
     },
     {
@@ -957,7 +1146,7 @@
         "kind": 6,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "class Comment(models.Model):\n    user_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name=\"user_commented_post\")\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=False, related_name=\"post_comment\" )\n    text = models.TextField(max_length=400)\n    date_added = models.DateTimeField(auto_now_add=True)\n    reply = models.ForeignKey('self', null=True, related_name=\"replies\", on_delete=models.CASCADE)\nclass Notification(models.Model):\n    N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"post_notification\", blank=True, null=True)\n    user_notify = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_to_user\")",
+        "peekOfCode": "class Comment(models.Model):\n    user_name = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name=\"user_commented_post\")\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, null=False, related_name=\"post_comment\" )\n    text = models.TextField(max_length=400)\n    date_added = models.DateTimeField(auto_now=False,auto_now_add=True)\n    reply = models.ForeignKey('self', null=True, related_name=\"replies\", on_delete=models.CASCADE)\nclass Notification(models.Model):\n    N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"post_notification\", blank=True, null=True)\n    comment_id = models.OneToOneField(Comment,blank=True,null=True, on_delete=models.CASCADE)",
         "detail": "core.models",
         "documentation": {}
     },
@@ -966,7 +1155,7 @@
         "kind": 6,
         "importPath": "core.models",
         "description": "core.models",
-        "peekOfCode": "class Notification(models.Model):\n    N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"post_notification\", blank=True, null=True)\n    user_notify = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_to_user\")\n    user_notify_sender = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_from_user\")\n    type = models.IntegerField(choices=N_CHOICES)\n    notification_text = models.CharField(max_length=100, blank=False)\n    date = models.DateField(auto_now=False, auto_now_add=True)\n    def __str__(self):\n        return f\"{self.id} - {self.post} - {self.user_notify} - {self.user_notify_sender} - {self.type}\"",
+        "peekOfCode": "class Notification(models.Model):\n    N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]\n    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name=\"post_notification\", blank=True, null=True)\n    comment_id = models.OneToOneField(Comment,blank=True,null=True, on_delete=models.CASCADE)\n    user_notify = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_to_user\")\n    user_notify_sender = models.ForeignKey(User,  on_delete=models.CASCADE, related_name=\"notification_from_user\")\n    type = models.IntegerField(choices=N_CHOICES)\n    notification_text = models.CharField(max_length=100, blank=False)\n    date = models.DateTimeField(auto_now=False, auto_now_add=True)\n    def __str__(self):",
         "detail": "core.models",
         "documentation": {}
     },
@@ -1047,7 +1236,7 @@
         "kind": 2,
         "importPath": "core.views",
         "description": "core.views",
-        "peekOfCode": "def shared_followers(current_user):\n    current_user_profile = Profile.objects.get(pk=current_user.id)\n    following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika\n    filered_users_by_shared_follows = User.objects.filter(following__pk__in=following_users_pk).order_by(\"-id\") ## użytkownicy, którzy sa obserwowani przez naszych obserwujących\n    final_list = filered_users_by_shared_follows.exclude(Q(id__in=following_users_pk.values_list('id', flat=True)) | Q(username=current_user_profile.user))\n    return final_list\n@method_decorator(login_required(login_url='/login'), name='dispatch')\nclass MainFeedbackWallView(View):\n    def get(self, request):\n        if str(request.user) == \"mateusz\":",
+        "peekOfCode": "def shared_followers(current_user):\n    current_user_profile = Profile.objects.get(pk=current_user.id)\n    following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika\n    filered_users_by_shared_follows = User.objects.filter(following__pk__in=following_users_pk).order_by(\"-id\") ## użytkownicy, którzy sa obserwowani przez naszych obserwujących\n    final_list = filered_users_by_shared_follows.exclude(Q(id__in=following_users_pk.values_list('id', flat=True)) | Q(username=current_user_profile.user))\n    return final_list.distinct()\n@method_decorator(login_required(login_url='/login'), name='dispatch')\nclass MainFeedbackWallView(View):\n    def get(self, request):\n        if str(request.user) == \"mateusz\":",
         "detail": "core.views",
         "documentation": {}
     },
@@ -1056,7 +1245,7 @@
         "kind": 2,
         "importPath": "core.views",
         "description": "core.views",
-        "peekOfCode": "def liked_posts(request):\n    user = request.user\n    user_liked_posts = user.postlikes.all()\n    paginator = Paginator(user_liked_posts, 20) \n    page_number = request.GET.get(\"page\")\n    page_obj = paginator.get_page(page_number)\n    context = {\n        \"liked_posts\" : user_liked_posts,\n        \"page_obj\":page_obj\n    }",
+        "peekOfCode": "def liked_posts(request):\n    user = request.user\n    user_liked_posts = user.postlikes.all()\n    paginator = Paginator(user_liked_posts, 20) \n    page_number = request.GET.get(\"page\")\n    page_obj = paginator.get_page(page_number)\n    context = {\n        \"liked_posts\" : user_liked_posts,\n        \"page_obj\":page_obj,\n        'notifications_read' : request.user.notification_to_user.all().exclude(user_notify_sender=request.user)",
         "detail": "core.views",
         "documentation": {}
     },

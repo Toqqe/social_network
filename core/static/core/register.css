@@ -10,7 +10,10 @@
 
 }
 
-
+.text-muted a{
+    text-decoration: none;
+    color:#555555;
+}
 
 .register-form {
     width: 90%;

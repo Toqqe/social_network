@@ -8,8 +8,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
 <script>
     $(document).ready(function() {
   $(".show-hide-btn").click(function() {
@@ -54,12 +52,16 @@
             headers: { "X-CSRFToken": csrftoken },
             processData: false,
             contentType: false,
+            cache: false,
             success: function(data) {
                 if (data.status === "ok") {
                 $("#user-post-list").prepend(data.post_html);
                 $("#user-post-form")[0].reset();
                 $("#output").removeAttr("src");
                 $("#id_image").val("");
+
+                $("#id_content").removeClass("is-invalid");
+                $("#invalid-feedback").empty();
                 }else{
 
                     const errors = JSON.parse(data.errors);
@@ -162,6 +164,7 @@ $(document).ready(function() {
 
                     {% include 'core/includes/followers_modal.html' %}
                     {% include 'core/includes/following_modal.html' %}
+
 
                     <div class="d-flex justify-content-center">
                         <div class="col"><a type="button" data-bs-toggle="modal" data-bs-target="#followersModal">
@@ -279,12 +282,6 @@ $(document).ready(function() {
 
                 </div>
             </div>
-
-
-
-
-
-
 
 
             <!-- /.tab-content -->

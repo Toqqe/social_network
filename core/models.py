@@ -35,19 +35,20 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, null=False, related_name="post_comment" )
 
     text = models.TextField(max_length=400)
-    date_added = models.DateTimeField(auto_now_add=True)
+    date_added = models.DateTimeField(auto_now=False,auto_now_add=True)
 
     reply = models.ForeignKey('self', null=True, related_name="replies", on_delete=models.CASCADE)
 
 class Notification(models.Model):
     N_CHOICES = [(1,'Follow'),(2,'Comment'),(3,'Reply'), (4,'Like')]
-    
+
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="post_notification", blank=True, null=True)
+    comment_id = models.OneToOneField(Comment,blank=True,null=True, on_delete=models.CASCADE)
     user_notify = models.ForeignKey(User,  on_delete=models.CASCADE, related_name="notification_to_user")
     user_notify_sender = models.ForeignKey(User,  on_delete=models.CASCADE, related_name="notification_from_user")
     type = models.IntegerField(choices=N_CHOICES)
     notification_text = models.CharField(max_length=100, blank=False)
-    date = models.DateField(auto_now=False, auto_now_add=True)
+    date = models.DateTimeField(auto_now=False, auto_now_add=True)
 
 
     def __str__(self):

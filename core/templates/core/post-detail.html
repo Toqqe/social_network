@@ -14,7 +14,7 @@
     
     function auto_grow_content(element) {
         element.style.height = "5px";
-        element.style.height = (20+element.scrollHeight)+"px";
+        element.style.height = (element.scrollHeight)+"px";
     }
 </script>
 
@@ -82,9 +82,7 @@
                         <!-- Post meta content-->
                         <div class="text-muted fst-italic mb-2"><a href="{% url 'user-profile' post.author %}" >@{{post.author}}</a></div>
                         <div class="text-muted fst-italic mb-2">{{post.date_of_creation}}</div>
-                        <!-- Post categories-->
-                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">....</a>
-                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">....</a>
+
                     </header>
                     <!-- Preview image figure-->
                     {% if post.image %}

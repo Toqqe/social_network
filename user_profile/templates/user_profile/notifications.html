@@ -5,8 +5,8 @@
 {% block page_content %}
 
 {% block page_css_files %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="{% static "core/notify-liked-posts.css" %}">
+<link rel="stylesheet" href="{% static "user_profile/notifications.css" %}">
 
 {% endblock  %}
 
@@ -38,15 +38,15 @@
               <div class="me-2"><img class="rounded-circle article-img" src="{{notification.user_notify_sender.profile.profile_img.url}}" width="40" height="40" alt="image"/></div>
               
               {% if notification.type == 1 %}
-                <p class="h5 card-text"> {{notification.user_notify_sender}} - is following you!</p>
-                {% elif notification.type == 2 %}
-                <p class="h5 card-text">{{notification.user_notify_sender}} - commented your post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post}}</a>, "{{notification.notification_text}}"</p>
-                {% elif notification.type == 3 %}
-                <p class="h5 card-text">{{notification.user_notify_sender}} - replies to your comment in post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post}}</a>, "{{notification.notification_text}}"!</p>
-                {% elif notification.type == 4 %}
-                <p class="h5 card-text">{{notification.user_notify_sender}} - liked your post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post}}</a>, "{{notification.notification_text}}"!</p>
-              
-                {% endif %}
+              <p class="h5 card-text"> <a href="{% url 'user-profile' notification.user_notify_sender %}">{{notification.user_notify_sender}}</a> - is following you!</p>
+              {% elif notification.type == 2 %}
+              <p class="h5 card-text">{{notification.user_notify_sender}} - commented your post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post.title}}</a>: {{notification.notification_text}}</p>
+              {% elif notification.type == 3 %}
+              <p class="h5 card-text">{{notification.user_notify_sender}} - replies to your comment <span class="comment_replies">"{{notification.comment_id.reply.text}}"</span> in post <a href="{% url 'post-detail-page' notification.post.id %}">{{notification.post.title}}</a>: {{notification.notification_text}}</p>
+              {% elif notification.type == 4 %}
+              <p class="h5 card-text">{{notification.user_notify_sender}} - liked your post <a href="{% url 'post-detail-page' notification.post.id %}">{% if notification.post.title %}{{notification.post.title}}{% else %}{{notification.post.id}}{% endif %}</a></p>
+            
+              {% endif %}
               
               <form class="ms-auto bd-highlight" method="POST">
                 {% csrf_token %}

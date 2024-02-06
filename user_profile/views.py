@@ -81,16 +81,19 @@ class ProfileDetailView(View):
         comment_form = CommentForm()
         add_post_on_wall = AddPost()
 
-        if "title" in request.POST or "content" in request.POST: ## <QueryDict: {'csrfmiddlewaretoken': [''], 'title': ['Witam, to mój pierwszy post!'], 'content': ['Hejka!Hejka!'], 'image': ['']}>
+        if "title" in request.POST or "content" in request.POST: 
             add_post_on_wall = AddPost(request.POST)
+
             if add_post_on_wall.is_valid():
+
+                comment_form = CommentForm()
 
                 post = add_post_on_wall.save(commit=False)
                 post.author = request.user.profile
                 post.image = request.FILES.get('image')
                 post.save()
 
-                post_html = render_to_string('user_profile/includes/post.html', {'post': post}, request=request)
+                post_html = render_to_string('user_profile/includes/post.html', {'post': post, "comment_form": comment_form}, request=request)
 
                 return JsonResponse({'status': 'ok', 'post_html': post_html})
             else:
@@ -106,10 +109,14 @@ class ProfileDetailView(View):
             if add_comment.is_valid():
                 commented_post_pk = request.POST['post_pk']
                 post_object = Post.objects.get(pk=commented_post_pk)
-                
+
                 comment = add_comment.save(commit=False)
                 comment.user_name = request.user
                 comment.post = post_object
+
+                notification = Notification(post=post_object, user_notify_sender=request.user, notification_text=comment.text, user_notify=post_object.author.user, type=2)
+                notification.save()
+
                 comment.save()
 
                 return HttpResponseRedirect(reverse("post-detail-page", args=[commented_post_pk]))
@@ -119,16 +126,11 @@ class ProfileDetailView(View):
             add_post_on_wall = AddPost()
 
             
-            current_user_profile_obj = Profile.objects.get(user=request.user) ## Cały obiekt zalogowanego usera
+            current_user_profile_obj = Profile.objects.get(user=request.user) ## Cały obiekt profilu zalogowanego usera
 
             selected_user_profile_pk = request.POST.get('profile_pk') ## Id klienta, u którego kliknięty był follow
             selected_user_obj = Profile.objects.get(pk=selected_user_profile_pk)
-        
-            ##Każdy user ma przypisany profil, który go może obserwować - selected_user_obj.user.following.all(), PK więc idziemy po kluczu do Usera
-            ##Każdy profil, ma przypisaynch userów jako oberwujących(przez niego) - current_user_profile_obj.following.all(), user bo zostajemy przy profilu
-            ## Jeden user do wielu profili, jeden profil do wielu userów
-            ## current_user_profile_obj - <class 'core.models.Profile'>
-            ## selected_user_obj.user - <class 'django.contrib.auth.models.User'>
+       
 
             if current_user_profile_obj in selected_user_obj.user.following.all():
                 current_user_profile_obj.following.remove(selected_user_obj.user)
@@ -145,7 +147,7 @@ class ProfileDetailView(View):
         context = {
             "following" : following,
             "user_profile": user_profile,
-            "user_posts": user_posts,
+            "page_obj": user_posts,
             "is_user_same_as_authenticated": is_user_same_as_authenticated,
             "add_post_on_wall" : add_post_on_wall,
             "comment_form": comment_form,
@@ -247,12 +249,13 @@ def notifications(request):
     paginator = Paginator(user_notify, 20) 
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
+    notfications_read = request.user.notification_to_user.all().exclude(user_notify_sender=user)
 
 
     context = {
         "notify" : page_obj,
         "user_profile" : user.profile,
-        "notifications_read": request.user.notification_to_user.all().exclude(user_notify_sender=user)
+        "notifications_read": notfications_read
     }
 
     return render(request, 'user_profile/notifications.html', context)

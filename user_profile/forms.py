@@ -23,7 +23,6 @@ class UpdateUserForm(forms.ModelForm):
 
 
     def clean_email(self):
-            ##username = self.cleaned_data["username"]
             email = self.cleaned_data["email"]
             users = User.objects.filter(email__iexact=email).exclude(username__iexact=self.user)
 
@@ -46,6 +45,4 @@ class UpdateProfileform(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['description'].widget.attrs.update({'class':'description-field', 'placeholder':'Add something about You!', 'oninput':'auto_grow(this)'})
-        self.fields['profile_img'].widget.attrs.update({'class':'profile_img btn btn-dark', 'onchange':'loadFile(event)'}) ## , 'onchange':'loadFile(event)'
-        #self.fields['profile_img'].label = ""
-        ##self.fields['profile_img-clear'].label = ""
+        self.fields['profile_img'].widget.attrs.update({'class':'profile_img btn btn-dark', 'onchange':'loadFile(event)'}) 

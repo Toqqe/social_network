@@ -12,7 +12,7 @@
                             <div class="modal-body">
                                     <div class="form-content mb-2">
                                         <ul class="list-users list-group list-group-flush text-center">
-                                        {% for user in user.profile.user.following.all %}
+                                        {% for user in user_profile.user.following.all %}
                                             <a href="{% url 'user-profile' user %}" ><li class="list-group-item text-break"><img class="rounded-circle article-img me-2" src="{{user.profile_img.url}}" width="40" height="40" alt="image"/><p class="fs-6 text-center">{{user}}</p></li></a>
                                         {% endfor %}
                                         </ul>

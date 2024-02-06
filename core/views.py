@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -22,10 +23,9 @@ def filtered_posts(active_site_user):
 
     if str(active_site_user) != "mateusz":
         active_user_profile = Profile.objects.get(pk=active_site_user.id) 
-        following_users_pk = active_user_profile.following.all().values_list('pk', flat=True) ##.user_created_posts.all().values_list( 'pk', flat=True)
+        following_users_pk = active_user_profile.following.all().values_list('pk', flat=True)
         filtered_posts_by_following_users = Post.objects.filter(author__pk__in=following_users_pk ).order_by("-date_of_creation")
 
-        ##posts_by_user = Post.objects.all().filter(author__pk=active_user_profile.user.id).order_by("-date_of_creation")
         posts_by_user = active_user_profile.user_created_posts.all().order_by("-id")
 
         merge_list = filtered_posts_by_following_users | posts_by_user
@@ -40,25 +40,24 @@ def shared_followers(current_user):
     following_users_pk = current_user_profile.following.all().values_list('pk', flat=True) ## Obecni obserwujący naszego użytkownika
     filered_users_by_shared_follows = User.objects.filter(following__pk__in=following_users_pk).order_by("-id") ## użytkownicy, którzy sa obserwowani przez naszych obserwujących
     final_list = filered_users_by_shared_follows.exclude(Q(id__in=following_users_pk.values_list('id', flat=True)) | Q(username=current_user_profile.user))
-    return final_list
+    
+    return final_list.distinct()
 
 
 
 
 @method_decorator(login_required(login_url='/login'), name='dispatch')
 class MainFeedbackWallView(View):
-
     def get(self, request):
 
+        
         if str(request.user) == "mateusz":
             all_posts = Post.objects.all().order_by("-id")
-
             context = {
             "all_posts" : all_posts,
             }
-
             return render(request, "core/index.html", context)
-
+        
         else:
 
             add_post_form = AddPost()
@@ -70,9 +69,6 @@ class MainFeedbackWallView(View):
             paginator = Paginator(filtered_posts_by_following_users, 5) 
             page_number = request.GET.get("page")
             page_obj = paginator.get_page(page_number)
-            
-            
-
             context = {
                 "filtered_users": filtered_users,
                 "add_post_form": add_post_form,
@@ -88,7 +84,6 @@ class MainFeedbackWallView(View):
         add_post_form = AddPost()
         all_posts = Post.objects.all().order_by("-date_of_creation")
         filtered_posts_by_following_users = filtered_posts(request.user)
-
 
         if "title" in request.POST or "content" in request.POST:
             add_post_form = AddPost(request.POST)
@@ -113,7 +108,6 @@ class MainFeedbackWallView(View):
         if "text" in request.POST:
             add_comment = CommentForm(request.POST)
 
-
             if add_comment.is_valid():
                 commented_post_pk = request.POST['post_pk']
                 post_object = Post.objects.get(pk=commented_post_pk)
@@ -121,6 +115,10 @@ class MainFeedbackWallView(View):
                 comment = add_comment.save(commit=False)
                 comment.user_name = request.user
                 comment.post = post_object
+
+                notification = Notification(post=post_object, user_notify_sender=request.user, notification_text=comment.text, user_notify=post_object.author.user, type=2)
+                notification.save()
+
                 comment.save()
 
                 return HttpResponseRedirect(reverse("post-detail-page", args=[commented_post_pk]))
@@ -181,8 +179,8 @@ class SignupPageView(View):
             user_login = authenticate(username=username, password=password)
             login(request, user_login)
 
-            user_model = User.objects.get(username=username)                                        ## Pobieramy model Usera, który został utworzony powyżej w modelu "User"
-            new_profile = Profile.objects.create(user=user_model, id=user_model.id)                 ## Tworzymy na podstawie "user_model" obiekt w naszym modelu Profile
+            user_model = User.objects.get(username=username)                                                ## Pobieramy model Usera, który został utworzony powyżej w modelu "User"
+            new_profile = Profile.objects.create(user=user_model, id=user_model.id)                         ## Tworzymy na podstawie "user_model" obiekt w naszym modelu Profile
             new_profile.save()
 
             return HttpResponseRedirect("/")
@@ -201,6 +199,7 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
         post_object = context['post']
+
         context['comments'] = post_object.post_comment.all().order_by('-id')
         context['notifications_read'] = self.request.user.notification_to_user.all().exclude(user_notify_sender=self.request.user)
         context['comment_form'] = CommentForm()
@@ -223,8 +222,6 @@ class PostDetailView(DetailView):
                 notification = Notification(user_notify=post_object.author.user, notification_text=comment.text , user_notify_sender=request.user, post=post_object,type=2)
                 notification.save()
 
-                ##return HttpResponseRedirect(reverse("post-detail-page", args=[pk]))
-
         if "comment-reply" in request.POST:
 
             parent_comment_id = request.POST.get('comment_id')
@@ -239,22 +236,31 @@ class PostDetailView(DetailView):
 
 
             if comment_parent_object.user_name == post_object.author.user:
-                notification = Notification(user_notify=post_object.author.user, notification_text=comment_reply_text ,user_notify_sender=request.user, post=post_object, type=3)
+                notification = Notification(user_notify=post_object.author.user, comment_id = comment , notification_text=comment_reply_text ,user_notify_sender=request.user, post=post_object, type=3)
                 notification.save()
-
-            ##return HttpResponseRedirect(reverse("post-detail-page", args=[pk]))
         
         if "comment_pk" in request.POST:
+
             commend_id = request.POST.get('comment_pk')
             instance = Comment.objects.get(pk=commend_id)
+
+            post_instance = Post.objects.get(pk=instance.post.id)
+
+            notification = Notification.objects.filter(user_notify_sender=request.user, notification_text=instance.text, type=2)
+            notification.delete()
+
             instance.delete()
         
         if "reply_pk" in request.POST:
             reply_id = request.POST.get('reply_pk')
             instance = Comment.objects.get(pk=reply_id)
-            instance.delete()
 
-            ##return HttpResponseRedirect(reverse("post-detail-page", args=[pk]))
+            post_instance = Post.objects.get(pk=instance.post.id)
+            
+            notification = Notification.objects.filter(post=post_instance, comment_id = instance.id, user_notify_sender=request.user,  type=3)##, date=instance.date_added)
+            notification.delete()
+
+            instance.delete()
 
         return HttpResponseRedirect(reverse("post-detail-page", args=[pk]))
         
@@ -279,10 +285,14 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.author = self.request.user.profile
         return super().form_valid(form)
     
-        
     def get_success_url(self):
           post_pk=self.kwargs['pk']
           return reverse_lazy('post-detail-page', kwargs={'pk': post_pk})
+    
+    def get_context_data(self, **kwargs):
+        context = super(PostUpdateView, self).get_context_data(**kwargs)
+        context['notifications_read'] = self.request.user.notification_to_user.all().exclude(user_notify_sender=self.request.user)
+        return context
 
 
     def test_func(self):
@@ -305,7 +315,8 @@ def liked_posts(request):
 
     context = {
         "liked_posts" : user_liked_posts,
-        "page_obj":page_obj
+        "page_obj":page_obj,
+        'notifications_read' : request.user.notification_to_user.all().exclude(user_notify_sender=request.user)
     }
 
     return render(request, 'core/liked-posts.html', context)

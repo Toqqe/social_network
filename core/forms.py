@@ -77,9 +77,9 @@ class UpdatePost(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['title'].widget.attrs.update({'class': 'form-control title-field', 'placeholder':'Title', 'oninput':'auto_grow(this)'})
         self.fields['content'].widget.attrs.update({'class':'content-field', 'placeholder':'Add something!', 'oninput':'auto_grow_content(this)'})
-        self.fields['image'].widget.attrs.update({'class':'image-field btn btn-dark','onchange':'loadFile(event)' }) ## 'onchange':'loadFile(event)'
+        self.fields['image'].widget.attrs.update({'class':'image-field btn btn-dark','onchange':'loadFile(event)' }) 
 
-        self.fields['remove_photo'].widget.attrs.update({'class':'btn btn-dark', 'style':'height:1rem; width:1rem; margin-bottom:1rem;'}) ## 'onchange':'loadFile(event)'
+        self.fields['remove_photo'].widget.attrs.update({'class':'btn btn-dark', 'style':'height:1rem; width:1rem; margin-bottom:1rem;'}) 
 
     def save(self, commit=True):
         instance = super(UpdatePost, self).save(commit=False)
